@@ -1,0 +1,37 @@
+.cmb2-nav-menus {
+    padding-right: 13px;
+}
+
+.cmb2-nav-menus .cmb-th {
+  padding: 0;
+  max-width: 120px;
+}
+
+.cmb2-nav-menus .cmb-td {
+  padding: 5px 0;
+}
+
+.cmb2-nav-menus label {
+  line-height: 1.5;
+  color: #666;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.cmb2-nav-menus img {
+    max-width: 100%;
+}
+
+.cmb2-nav-menus.cmb-type-text .cmb-td {
+    width: 100%;
+}
+
+.cmb2-nav-menus input[type="text"],
+.cmb2-nav-menus input[type="email"],
+.cmb2-nav-menus input[type="url"],
+.cmb2-nav-menus input[type="search"],
+.cmb2-nav-menus input[type="password"],
+.cmb2-nav-menus textarea {
+    width: 100%;
+}
