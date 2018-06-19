@@ -291,12 +291,21 @@ class Integration
 		if ($plugins !== WP_PLUGIN_DIR || $plugins !== WPMU_PLUGIN_DIR) {
 			// Must be a symlink, guess location based on default directory name
 			$resource = $name.'/'.$file;
+			$url = false;
 
 			if (file_exists(WPMU_PLUGIN_DIR.'/'.$resource)) {
-				return WPMU_PLUGIN_URL.'/'.$resource;
+				$url = WPMU_PLUGIN_URL.'/'.$resource;
 			}
 			elseif (file_exists(WP_PLUGIN_DIR.'/'.$resource)) {
-				return WP_PLUGIN_URL.'/'.$resource;
+				$url = WP_PLUGIN_URL.'/'.$resource;
+			}
+
+			if ($url) {
+				if (is_ssl() && substr($url, 0, 7) !== 'https://') {
+					$url = str_replace('http://', 'https://', $url);
+				}
+
+				return $url;
 			}
 		}
 
